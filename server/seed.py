@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 
 from random import choice as rc
-
 from faker import Faker
-
-from app import app
-from models import db, Zookeeper, Animal, Enclosure
+from app import app, db
+from models import Zookeeper, Animal, Enclosure
 
 fake = Faker()
+
+# Create the Flask app context
+app.app_context().push()
 
 with app.app_context():
 
